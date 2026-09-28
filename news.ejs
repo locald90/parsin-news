@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title><%= count %> новостей — <%= categoryTitle %></title>
+</head>
+<body>
+  <h3><%= count %> последних новостей в категории <%= categoryTitle %></h3>
+
+  <% if (news.length === 0) { %>
+    <p>Новости не найдены.</p>
+  <% } else { %>
+    <dl>
+      <% news.forEach(function(item) { %>
+        <dt><%= item.title %></dt>
+        <dd><%= item.description %></dd>
+      <% }); %>
+    </dl>
+  <% } %>
+</body>
+</html>
